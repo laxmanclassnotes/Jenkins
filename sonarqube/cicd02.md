@@ -1,12 +1,70 @@
-### In Jenkins pipeline we use JFROG module
+ ### In Jenkins pipeline we use JFROG module
 --------------------------------------------
 * In this project we also use `SpringPetcllinic`.
 * Firstly these content `fork` into our repository. 
 * Open VS-code and create one `Jenkinsfile`
    * In these we adding `Stages, Triggers, parametrers`
-* Next login into our JENKINS maternode Take a new pipeline.
+* Next login into our JENKINS masternode Take a new pipeline.
 * Go to Managejenkins > manage plugins > install `JFROG inventory` and `Arifactory`.
 * Create a new account in JFROG 14-days free style and login into these account.
+```content
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <servers>
+    <server>
+      <username>gottipati1849@gmail.com</username>
+      <password>cmVmdGtuOjAxOjE3MDk2NjQyMzI6UDJ3VGlLaDBMclV6ZTdHbld0ZnN4cVhOMWFu</password>
+      <id>central</id>
+    </server>
+    <server>
+      <username>gottipati1849@gmail.com</username>
+      <password>cmVmdGtuOjAxOjE3MDk2NjQyMzI6UDJ3VGlLaDBMclV6ZTdHbld0ZnN4cVhOMWFu</password>
+      <id>snapshots</id>
+    </server>
+  </servers>
+  <profiles>
+    <profile>
+      <repositories>
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>libs-release</name>
+          <url>https://laxmanmarch23.jfrog.io/artifactory/libs-release</url>
+        </repository>
+        <repository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>libs-snapshot</name>
+          <url>https://laxmanmarch23.jfrog.io/artifactory/libs-snapshot</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>libs-release</name>
+          <url>https://laxmanmarch23.jfrog.io/artifactory/libs-release</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>libs-snapshot</name>
+          <url>https://laxmanmarch23.jfrog.io/artifactory/libs-snapshot</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <id>artifactory</id>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>artifactory</activeProfile>
+  </activeProfiles>
+</settings>
+```
 ![preview](./images/jenkins11.png)
 * In these we create a maven project and some credentials are shown. These credentials are copy  and paste it on notepad ++.
 ![preview](./images/jenkins10.png)

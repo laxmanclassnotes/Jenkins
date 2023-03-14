@@ -47,7 +47,7 @@ Its successfully build.
 ![preview](./images/jenkins05.png)
 * Create an account in SonarCloud and then create an Organisation [Refer Here](https://sonarcloud.io/projects) my sonar cloud cloud.
 ![preview](./images/jenkins03.png)
-* Use these sonarcloud url And secreat token on Notepad++
+* Use these sonarcloud url And secret token on Notepad++
 * Go to credentials create a new token for Sonar-purpose
 * And go to Manage plugins install `Sonar QubeScanner` and give credentials of Sonarpurpose.
    * And next we add sonar analysis steps in above pipeline 
