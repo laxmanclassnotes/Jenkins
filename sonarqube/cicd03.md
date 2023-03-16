@@ -11,7 +11,7 @@
 ![preview](./images/jenkins18.png)
 * Crate one job using pipeline in these git credentials are added.
 * In Jenkinsfile
-[Refer Here](https://github.com/laxman1849/spring-petclinic.git)
+[Refer Here](https://github.com/laxman1849/spring-petclinicpr12.git)
 * Build the maven package
 * After we take jar file move to `S3-bucket` following these steps:
 *  Navigate to IAM and create one group 
@@ -59,15 +59,56 @@ stage('craeting folder') {
 ![preview](./images/jenkins27.png)
   `sudo vi hosts <localhost>`
 ![preview](./images/jenkins28.png)
-[Refer Here](https://github.com/laxman1849/spring-petclinic/blob/release/Jenkinsfile)for ansible-playbook steps
-[Refer Here](https://github.com/laxman1849/spring-petclinic/blob/release/springpetclinic.yaml) springpetclinic.yaml file for (S3 Jar file)
-[Refer Here](https://github.com/laxman1849/spring-petclinic/blob/release/springpet.service) for service file.
-[Refer Here](https://github.com/laxman1849/spring-petclinic/blob/release/hosts)host file
+[Refer Here](https://github.com/laxman1849/spring-petclinicpr12/blob/develop/Jenkinsfile)in develop branch jenkins file.
+[Refer Here](httphttps://github.com/laxman1849/spring-petclinicpr12/blob/release/Jenkinsfile)for ansible-playbook steps
+[Refer Here](https://github.com/laxman1849/spring-petclinicpr12/blob/release/springpetclinic.yaml) springpetclinic.yaml file for (S3 Jar file)
+[Refer Here](https://github.com/laxman1849/spring-petclinicpr12/blob/release/springpet.service) for service file.
+[Refer Here](https://github.com/laxman1849/spring-petclinicpr12/blob/release/hosts)host file
 
-[Refer Here](https://github.com/laxman1849/spring-petclinic/tree/release)for change branch content.
+[Refer Here](https://github.com/laxman1849/spring-petclinicpr12/tree/release)for change branch content.
 * Navigate to pipeline and create one pipeline build for release branch then the build was Succesfull we see the results as below
 ![preview](./images/jenkins30.png)
 ![preview](./images/jenkins29.png)
+![preview](./images/jenkins31.png)
 
+### GitHub Pull Request Builder
+-------------------------------
 
-
+* Open Jenkins Navigete to manage jenkins ==> Manage plugins => install `GitHub Pull Request Builder` 
+[Refer Here](https://plugins.jenkins.io/ghprb/) dollow these steps.
+* Go to Github account > settings > Developer settings > Personal AccessToken select`classic` > generate token and give permissions 
+* Once generate the token copy the notepad 
+![Preview](./images/jenkins32.png)
+* Navigate to manage jenkins go to `credentials` and new token add with username and passwd
+![Preview](./images/jenkins33.png)
+* Navigate to configure system goto GitHub Pull Request Builder 
+![Preview](./images/image34.png)
+* Create one Free style project (select gihub project)
+[Refer Here](https://github.com/laxman1849/spring-petclinicpr12/tree/develop)
+   * In these we selecting `Jenkinsfile` (we take release branch details)
+     * given steps follow
+![Preview](./images/jenkins35.png)
+![Preview](./images/jenkins36.png)
+![Preview](./images/jenkins37.png)
+![Preview](./images/jenkins38.png)   
+![Preview](./images/jenkins39.png)
+* In these above Images we Take only the original `GitHub Repositry` Url's
+  * Navigate to GitHub Account 
+![Preview](./images/jenkins40.png)
+![Preview](./images/jenkins41.png)
+![Preview](./images/jenkins42.png)
+![Preview](./images/jenkins43.png)
+* Then Fork the Content into Another account 
+![Preview](./images/jenkins44.png)
+![Preview](./images/jenkins45.png)
+![Preview](./images/jenkins46.png) 
+ * In these `dummy repository`add some changes and commit it
+![Preview](./images/jenkins47.png)  
+ * Navigate to pull request
+![Preview](./images/jenkins48.png)
+![Preview](./images/jenkins49.png)
+![Preview](./images/jenkins50.png)
+* select pullrequest then atomatically triggered in our project
+![Preview](./images/jenkins51.png)
+![Preview](./images/jenkins52.png)
+* optional ( Then you can use this changes content merge you use ).   
